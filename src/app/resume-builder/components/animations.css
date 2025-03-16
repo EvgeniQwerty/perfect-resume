@@ -1,0 +1,82 @@
+/* Animation styles for the resume builder */
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Fade out animation */
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* Slide down animation */
+@keyframes slideDown {
+  from { 
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to { 
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Slide up animation */
+@keyframes slideUp {
+  from { 
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to { 
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+}
+
+/* Animation classes */
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.animate-fade-out {
+  animation: fadeOut 0.3s ease-in-out;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.4s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.4s ease-out;
+}
+
+/* Custom date input styling */
+input[type="date"] {
+  font-family: inherit;
+  color: inherit;
+  appearance: none;
+  position: relative;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background-color: transparent;
+  cursor: pointer;
+  position: absolute;
+  right: 8px;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+/* Transition for all elements */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
