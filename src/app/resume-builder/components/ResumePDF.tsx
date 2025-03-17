@@ -123,7 +123,7 @@ const ResumePDF = ({ data, dateFormat = "YYYY-MM-DD" }: ResumePDFProps) => {
           <PDFWorkExperience data={validatedData.workExperience} dateFormat={dateFormat} language={currentLanguage} />
 
           {/* Education Section - Apply the selected date format */}
-          <PDFEducation data={validatedData.education} dateFormat={dateFormat} language={currentLanguage} />
+          <PDFEducation data={validatedData.education} dateFormat="YYYY-MM-DD" language={currentLanguage} />
 
           {/* Skills Section */}
           <PDFSkills data={validatedData.skills} language={currentLanguage} />

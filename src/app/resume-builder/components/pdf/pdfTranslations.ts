@@ -27,7 +27,7 @@ export const pdfTranslations: TranslationsType = {
   ru: {
     'personalInfo.title': 'Личная информация',
     'workExperience.title': 'Опыт работы',
-    'workExperience.currentJob': 'По настоящее время',
+    'workExperience.currentJob': 'по н.в.',
     'education.title': 'Образование',
     'education.gpa': 'Средний балл',
     'skills.title': 'Навыки'
