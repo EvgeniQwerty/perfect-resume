@@ -46,7 +46,7 @@ Perfect Resume is a modern, feature-rich resume builder application that helps y
 
 1. Clone the repository
    ```
-   git clone https://github.com/yourusername/perfect-resume.git
+   git clone https://github.com/evgeniqwerty/perfect-resume.git
    cd perfect-resume
    ```
 
@@ -57,14 +57,20 @@ Perfect Resume is a modern, feature-rich resume builder application that helps y
    yarn install
    ```
 
-3. Start the development server
+3. Create a `.env` file in the root directory with your OpenRouter API key
+   ```
+   OPENROUTER_API_KEY=your_api_key_here
+   ```
+   You can obtain an API key by registering at [https://openrouter.ai/](https://openrouter.ai/)
+
+4. Start the development server
    ```
    npm run dev
    # or
    yarn dev
    ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
+5. Open [http://localhost:3000](http://localhost:3000) in your browser
 
 ## Usage
 
@@ -93,20 +99,6 @@ yarn start
 - Yup - Form validation
 - React-PDF - PDF generation
 - React DnD - Drag and drop functionality
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Acknowledgments
 
