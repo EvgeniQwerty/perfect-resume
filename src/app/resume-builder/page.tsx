@@ -5,13 +5,15 @@ import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
-import { useLanguage } from "../contexts/LanguageContext";
 
 // Import components
 import Preview from "./components/Preview";
-import Stepper from "./components/Stepper";
 import FormSection from "./components/FormSection";
+import Stepper from "./components/Stepper";
 import NavigationButtons from "./components/NavigationButtons";
+
+// Import contexts
+import { useLanguage } from "../contexts/LanguageContext";
 
 // Import types
 import { ResumeData, initialValues } from "./types";
@@ -82,7 +84,7 @@ export default function ResumeBuilder() {
     }
     setSubmitting(false);
   };
-  
+
   // Load data from localStorage on initial render
   useEffect(() => {
     const savedData = localStorage.getItem('resumeData');
@@ -100,59 +102,60 @@ export default function ResumeBuilder() {
     <DndProvider backend={HTML5Backend}>
       <div className="min-h-screen bg-gray-50 pt-14">
         <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-        <div className="px-4 py-6 sm:px-0">
-          {/* Stepper */}
-          <Stepper 
-            steps={steps} 
-            activeStep={activeStep} 
-            setActiveStep={setActiveStep} 
-            resumeData={resumeData} 
-          />
+          <div className="px-4 py-6 sm:px-0">
+            {/* Stepper */}
+            <Stepper 
+              steps={steps} 
+              activeStep={activeStep} 
+              setActiveStep={setActiveStep} 
+              resumeData={resumeData} 
+            />
 
-          {/* Form and Preview */}
-          <div className="flex flex-col lg:flex-row gap-8">
-            {/* Form Section */}
-            <div className="w-full lg:w-1/2 bg-white shadow rounded-lg p-6">
-              <Formik
-                initialValues={resumeData}
-                validationSchema={validationSchema}
-                onSubmit={handleSubmit}
-                enableReinitialize
-              >
-                {({ values, errors, touched, setFieldValue }) => {
-                  // Update resumeData in real-time as values change
-                  useEffect(() => {
-                    setResumeData(values);
-                  }, [values]);
-                  
-                  return (
-                  <Form className="space-y-6">
-                    <FormSection 
-                      activeStep={activeStep} 
-                      values={values} 
-                      setFieldValue={setFieldValue}
-                      dateFormat={dateFormat}
-                      setDateFormat={setDateFormat}
-                    />
+            {/* Form and Preview */}
+            <div className="flex flex-col lg:flex-row gap-8">
+              {/* Form Section */}
+              <div className="w-full lg:w-1/2 bg-white shadow rounded-lg p-6">
+                <Formik
+                  initialValues={resumeData}
+                  validationSchema={validationSchema}
+                  onSubmit={handleSubmit}
+                  enableReinitialize
+                >
+                  {({ values, errors, touched, setFieldValue }) => {
+                    // Update resumeData in real-time as values change
+                    useEffect(() => {
+                      setResumeData(values);
+                    }, [values]);
+                    
+                    return (
+                      <Form className="space-y-6">
+                        <FormSection 
+                          activeStep={activeStep} 
+                          values={values} 
+                          setFieldValue={setFieldValue}
+                          dateFormat={dateFormat}
+                          setDateFormat={setDateFormat}
+                        />
 
-                    <NavigationButtons 
-                      activeStep={activeStep} 
-                      steps={steps} 
-                      handleBack={handleBack} 
-                      handleNext={handleNext}
-                      values={values}
-                      setFieldValue={setFieldValue}
-                    />
-                  </Form>
-                )}}
-              </Formik>
+                        <NavigationButtons 
+                          activeStep={activeStep} 
+                          steps={steps} 
+                          handleBack={handleBack} 
+                          handleNext={handleNext}
+                          values={values}
+                          setFieldValue={setFieldValue}
+                        />
+                      </Form>
+                    );
+                  }}
+                </Formik>
+              </div>
+
+              {/* Preview Section */}
+              <Preview resumeData={resumeData} dateFormat={dateFormat} />
             </div>
-
-            {/* Preview Section */}
-            <Preview resumeData={resumeData} dateFormat={dateFormat} />
           </div>
-        </div>
-      </main>
+        </main>
       </div>
     </DndProvider>
   );

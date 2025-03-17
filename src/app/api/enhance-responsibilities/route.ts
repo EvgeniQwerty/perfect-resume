@@ -156,7 +156,7 @@ ${filteredResponsibilities.map((r: string, i: number) => `${i+1}. ${r}`).join('\
       
       // Instead of checking every responsibility, check if the overall response contains sufficient Cyrillic text
       // This allows for technical terms in English while ensuring the response is predominantly in Russian
-      const hasEnoughCyrillicText = enhancedResponsibilities.some(resp => containsCyrillic(resp));
+      const hasEnoughCyrillicText = enhancedResponsibilities.some((resp: string) => containsCyrillic(resp));
       
       if (!hasEnoughCyrillicText && filteredResponsibilities.length > 0) {
         console.warn('Received non-Russian responsibilities when Russian was requested. Returning original responsibilities.');

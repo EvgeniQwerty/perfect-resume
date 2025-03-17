@@ -1,36 +1,114 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Perfect Resume
+
+Perfect Resume is a modern, feature-rich resume builder application that helps you create professional, Harvard-style resumes in minutes. Stand out from the competition with clean formatting and AI-powered suggestions.
+
+## Features
+
+### Easy-to-Use Interface
+- Step-by-step resume building process with intuitive navigation
+- Drag-and-drop functionality for reordering work experience and education entries
+- Live preview of your resume as you build it
+
+### Multi-Language Support
+- Full support for English and Russian languages
+- Seamlessly switch between languages while building your resume
+- All UI elements, form fields, and generated content adapt to your selected language
+
+### AI-Powered Enhancements
+- Generate skills based on your work experience
+- Transform basic job responsibilities into impactful, achievement-oriented statements
+- AI suggestions help highlight your accomplishments and quantify results
+
+### Customizable Date Formats
+- Choose from multiple date format options (YYYY-MM-DD, MM/DD/YYYY, etc.)
+- Consistent date formatting throughout your resume
+
+### ATS-Friendly Design
+- Optimized to pass Applicant Tracking Systems
+- Clean, professional formatting that hiring managers love
+- Harvard-style resume layout that stands out
+
+### PDF Export
+- Download your completed resume as a professionally formatted PDF
+- Ready to send to employers
+
+### Data Persistence
+- Your resume data is automatically saved in your browser
+- Continue where you left off when you return
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+- Node.js (version 14 or higher)
+- npm or yarn
 
-```bash
-npm run dev
+### Installation
+
+1. Clone the repository
+   ```
+   git clone https://github.com/yourusername/perfect-resume.git
+   cd perfect-resume
+   ```
+
+2. Install dependencies
+   ```
+   npm install
+   # or
+   yarn install
+   ```
+
+3. Start the development server
+   ```
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+## Usage
+
+1. **Personal Information**: Fill in your basic contact details
+2. **Work Experience**: Add your professional history with AI-enhanced responsibilities
+3. **Education**: Include your academic background
+4. **Skills**: Add skills manually or generate them with AI based on your work experience
+5. **Preview & Download**: Review your resume and download it as a PDF
+
+## Building for Production
+
+```
+npm run build
+npm start
 # or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+yarn build
+yarn start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Next.js - React framework
+- TypeScript - Type-safe JavaScript
+- Tailwind CSS - Utility-first CSS framework
+- Formik - Form management
+- Yup - Form validation
+- React-PDF - PDF generation
+- React DnD - Drag and drop functionality
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Contributing
 
-## Learn More
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-To learn more about Next.js, take a look at the following resources:
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Deploy on Vercel
+## Acknowledgments
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Inspired by Harvard resume formatting guidelines
+- AI-powered features utilize modern language models
