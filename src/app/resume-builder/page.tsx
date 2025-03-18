@@ -261,16 +261,11 @@ export default function ResumeBuilder() {
                           onChange={(format) => setDateFormat(format)}
                         />
                         
-                        <div className="flex flex-col sm:flex-row gap-4">
-                          <PDFDownloadLink
-                            document={<ResumePDF data={values} dateFormat={dateFormat} />}
-                            fileName="resume.pdf"
-                            className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                          >
-                            {t('preview.downloadPDF')}
-                          </PDFDownloadLink>
-                          
-                          {/* Donation buttons */}
+                        {/* Donation buttons container - positioned above PDF download button */}
+                        <div className="mb-4">
+                          {/* Always show donation buttons regardless of language */}
+                          <div className="flex flex-col sm:flex-row gap-4 mb-2">
+                            {/* Russian donation button */}
                             <a 
                               href="https://pay.cloudtips.ru/p/0535c138" 
                               target="_blank" 
@@ -279,16 +274,28 @@ export default function ResumeBuilder() {
                             >
                               {t('donation.button')} ✨
                             </a>
-                          
-                          {/* Worldwide donation button */}
-                          <a 
-                            href="https://www.donationalerts.com/r/evgeniqwerty" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 shadow-md transform transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-400"
+                            
+                            {/* Worldwide donation button */}
+                            <a 
+                              href="https://www.donationalerts.com/r/evgeniqwerty" 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 shadow-md transform transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-400"
+                            >
+                              {t('donation.button')} 🌎
+                            </a>
+                          </div>
+                        </div>
+                        
+                        {/* PDF download button - positioned below donation buttons */}
+                        <div>
+                          <PDFDownloadLink
+                            document={<ResumePDF data={values} dateFormat={dateFormat} />}
+                            fileName="resume.pdf"
+                            className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                           >
-                            {t('donation.button')} 🌎
-                          </a>
+                            {t('preview.downloadPDF')}
+                          </PDFDownloadLink>
                         </div>
                       </div>
                     )}

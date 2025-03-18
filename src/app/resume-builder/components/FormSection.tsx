@@ -56,19 +56,19 @@ const FormSection = ({
             onChange={(format) => setDateFormat(format)}
           />
           
-          <div className="flex flex-col gap-4">
-            {/* Donation buttons - now always visible regardless of language */}
+          {/* Donation buttons in a separate container - positioned above PDF download button */}
+          <div className="mb-4">
             <DonationButtons />
-            
-            {/* PDF download button - now positioned below donation buttons */}
+          </div>
+          
+          {/* PDF download button - positioned below donation buttons */}
             <PDFDownloadLink
               document={<ResumePDF data={values} dateFormat={dateFormat} />}
               fileName="resume.pdf"
-              className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              className="w-full inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
             >
               {t('preview.downloadPDF')}
             </PDFDownloadLink>
-          </div>
         </div>
       )}
     </div>
