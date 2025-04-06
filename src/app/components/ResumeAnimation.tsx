@@ -6,9 +6,21 @@ interface ResumeAnimationProps {}
 
 export default function ResumeAnimation({}: ResumeAnimationProps) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isMobile, setIsMobile] = useState(false);
   const animationRef = useRef(null);
 
   useEffect(() => {
+    // Check if we're on mobile on initial render
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    // Initial check
+    checkIfMobile();
+    
+    // Add resize listener
+    window.addEventListener("resize", checkIfMobile);
+    
     const handleMouseMove = (e: MouseEvent) => {
       if (animationRef.current) {
         const element = animationRef.current as HTMLElement;
@@ -20,7 +32,10 @@ export default function ResumeAnimation({}: ResumeAnimationProps) {
     };
 
     window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("resize", checkIfMobile);
+    };
   }, []);
 
   // Calculate animation styles based on mouse position
@@ -34,6 +49,11 @@ export default function ResumeAnimation({}: ResumeAnimationProps) {
       transition: 'transform 0.3s ease-out'
     };
   };
+
+  // Don't render anything on mobile screens
+  if (isMobile) {
+    return null;
+  }
 
   return (
     <div 

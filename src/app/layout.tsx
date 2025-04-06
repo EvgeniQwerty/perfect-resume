@@ -50,7 +50,9 @@ export default function RootLayout({
               },
             },
           }} />
-          {children}
+          <div className="pt-4"> {/* Removed home-content class from here */}
+            {children}
+          </div>
         </LanguageProvider>
       </body>
     </html>

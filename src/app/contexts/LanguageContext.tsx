@@ -44,6 +44,8 @@ const translations = {
     'workExperience.responsibilities': 'Responsibilities',
     'workExperience.addResponsibility': 'Add Responsibility',
     'workExperience.addExperience': 'Add Work Experience',
+    'workExperience.enhanceWithAI': 'Enhance with AI',
+    'workExperience.enhancing': 'Enhancing...',
     'education.title': 'Education',
     'education.universityName': 'University/School Name',
     'education.location': 'Location',

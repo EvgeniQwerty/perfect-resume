@@ -17,7 +17,7 @@ export default function HeroSection({}: HeroSectionProps) {
         {t('hero.description')}
       </p>
       <div className="flex flex-col sm:flex-row gap-4">
-        <Link href="/resume-builder" className="px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-lg font-medium inline-block">
+        <Link href="/resume-builder" className="px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-lg font-medium inline-block text-center">
           {t('hero.cta')}
         </Link>
       </div>

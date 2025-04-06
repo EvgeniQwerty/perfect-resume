@@ -27,7 +27,7 @@ export default function FeatureCards({}: FeatureCardsProps) {
   return (
     <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-xl">
       {features.map((feature, index) => (
-        <div key={index} className="flex flex-col items-start">
+        <div key={index} className="flex flex-col items-center sm:items-start text-center sm:text-left">
           <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
             <Image src={feature.icon} alt={t(feature.titleKey)} width={24} height={24} className="text-blue-600" />
           </div>

@@ -65,7 +65,7 @@ const Stepper = ({ steps, activeStep, setActiveStep, resumeData }: StepperProps)
               {index < activeStep ? "✓" : index + 1}
             </div>
             <div 
-              className={`text-xs mt-2 ${index <= activeStep + 1 ? "cursor-pointer" : "cursor-not-allowed text-gray-400"}`} 
+              className={`text-xs mt-2 ${index <= activeStep + 1 ? "cursor-pointer" : "cursor-not-allowed text-gray-400"} hidden sm:block`} 
               onClick={() => handleStepClick(index)}
             >
               {step}
